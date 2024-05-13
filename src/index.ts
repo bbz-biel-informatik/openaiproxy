@@ -18,10 +18,10 @@ export default {
 		console.log(`Hello ${navigator.userAgent} at path ${url.pathname}!`);
 
 		// Build new request
-		const accessToken = 'sk-proj-example1234';
+		const accessToken = 'ACCESS_TOKEN_HERE';
 		const newHeaders = new Headers(request.headers);
 		newHeaders.set('Authorization', `Bearer ${accessToken}`);
-		const newUrl = request.url.replace('https://openaiproxy.blabla.workers.dev', 'https://api.openai.com');
+		const newUrl = request.url.replace('WORKER_URL_HERE', 'https://api.openai.com');
 		const response = await fetch(newUrl, {
 			method: request.method,
 			headers: newHeaders,
