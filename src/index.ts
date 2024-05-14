@@ -28,7 +28,9 @@ export default {
 			body: request.body
 		});
 
-		const json = await response.json();
-		return Response.json(json);
+		return new Response(await response.text(), {
+			status: response.status,
+			headers: response.headers
+		});
 	},
 };
